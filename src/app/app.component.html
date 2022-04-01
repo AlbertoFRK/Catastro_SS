@@ -1,0 +1,44 @@
+<body>
+  <form>
+    <h1>{{title}}</h1>
+    <ul>
+      <h2>Registro</h2>
+      <label for="inputNombre">
+        Nombre: <input type="text" class="form-control" id="input1" name="nombre" required>
+      </label>
+      <br>
+      <label for="inputEdad">
+        Edad: <input type="text" class="form-control" id="input2" name="edad"  required>
+      </label>
+      <br>
+      <label for="inputSexo">
+        Sexo: <input type="text" class="form-control" id="input3" name="sexo"  required>
+      </label>
+      <br>
+      <label for="inputInteres">
+        Interes:<input type="text" class="form-control" id="input4" name="interes" required>
+      </label>
+      <br>
+      <br>
+      <button type="submit">Guardar</button>
+    </ul>
+    <table class="default">
+
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Interes</th>
+      </tr>
+
+      <tr *ngFor="let element of persona; index as i">
+        <th scope="row">{{i}}</th>
+        <th>{{element.nombre}}</th>
+        <th>{{element.edad}}</th>
+        <th>{{element.sexo}}</th>
+        <th>{{element.interes}}</th>
+      </tr>
+    </table>
+  </form>
+</body>
