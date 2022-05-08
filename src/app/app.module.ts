@@ -23,5 +23,5 @@ export interface Persona{
   nombre: string;
   edad: number;
   sexo: string;
-  interes: string;
+  ocupacion: string;
 }
