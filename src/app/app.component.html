@@ -1,14 +1,37 @@
 <body>
   <form>
-    <h1>{{title}}</h1>
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="buscadores"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+        <mat-menu #buscadores="matMenu">
+          <a mat-menu-item href="https://guadalajara.gob.mx/gdlWeb/#/principal">Gobierno</a>
+          <a mat-menu-item href="https://guadalajara.gob.mx/gdlWeb/#/principal">Ciudad</a>
+          <a mat-menu-item href="https://tramites.guadalajara.gob.mx/tramites-y-servicios">Tramites y Servicios</a>
+        </mat-menu>
+      </button>
+      <span>Catastro Guadalajara</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="nosotros" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+        <mat-menu #nosotros="matMenu">
+          <a mat-menu-item href="https://www.facebook.com/GuadalajaraGob">Facebook</a>
+          <a mat-menu-item href="https://twitter.com/GuadalajaraGob">Twitter</a>
+          <a mat-menu-item href="https://www.instagram.com/guadalajaragob/">Instagram</a>
+        </mat-menu>
+      </button>
+    </mat-toolbar>
     <ul>
-      <h2>Registro</h2>
+      <mat-card-title>Registro</mat-card-title>
       <div *ngFor="let element of persona">
         <div *ngFor="let element2 of element; let i = index">
-          <label for="">
+          <mat-card-subtitle>
             {{element2.label_campo}}
-          </label>
-          <input type="text" class="form-control" id="name" name="name-{{i}}" [ngModel]="element2.valor_campo">
+          </mat-card-subtitle>
+          <mat-form-field>
+            <input matInput type="text" class="form-control" id="name" name="name-{{i}}"
+              [ngModel]="element2.valor_campo">
+          </mat-form-field>
         </div>
       </div>
     </ul>
